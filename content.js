@@ -1,4 +1,4 @@
-window.addEventListener('load', (event) => {
+/*window.addEventListener('load', (event) => {
        var lang = document.documentElement.lang;
 
        //this is used when translate pages from any languages to Arabic
@@ -7,4 +7,8 @@ window.addEventListener('load', (event) => {
        }
 
        
+  });*/
+
+  chrome.runtime.onMessage.addListener(function(request){
+       alert(request);
   });

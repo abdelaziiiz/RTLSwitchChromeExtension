@@ -1,6 +1,6 @@
-document.addEventListener('DOMContentLoaded', function(){
+/*window.addEventListener('load', function(){
 
-    document.querySelector("Button").addEventListener("click", onSwitch, false);
+    document.querySelector('button').addEventListener('click', onSwitch, false);
 
     function onSwitch(){
         chrome.tabs.query({currentWindow : true,  active : true }, function(tabs){
@@ -8,4 +8,13 @@ document.addEventListener('DOMContentLoaded', function(){
         });
     }
 
-}, false);
+}, false);*/
+
+
+document.querySelector('button').addEventListener('click', function(){
+
+    chrome.tabs.query({currentWindow : true,  active : true }, function(tabs){
+        chrome.tabs.sendMessage(tabs[0].id, 'hi abdelaziz');
+     });
+
+},false);
